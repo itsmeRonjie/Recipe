@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ListItemView: View {
-    let name: String
-    let caloriesPer100grams: Int
-    let image: String
+    let recipeModel: RecipeModel
+
     let dim: CGFloat = 70
+
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 10) {
-                Text(name).foregroundStyle(.orange)
-                Text("\(caloriesPer100grams) calories per 100 grams")
+                Text(recipeModel.name).foregroundStyle(.orange)
+                Text("\(recipeModel.caloriesPer100Grams) calories per 100 grams")
                     .font(.caption)
                     .foregroundStyle(.white)
                     .fontWeight(.semibold)
@@ -25,10 +25,15 @@ struct ListItemView: View {
             
             Spacer()
             
-            Image(image)
+            Image(recipeModel.recipeImage)
                 .resizable()
                 .frame(width: dim, height: dim)
                 .cornerRadius(10)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.white.opacity(0.3), lineWidth: 1)
+                }
+                .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
             
         }
         .padding()
@@ -38,9 +43,14 @@ struct ListItemView: View {
 
 #Preview {
     ListItemView(
-        name: "Hummus",
-        caloriesPer100grams: 322,
-        image: "IMGHummus")
+        recipeModel: RecipeModel(
+            name: "Hummus",
+            caloriesPer100Grams: 322,
+            recipe: "",
+            recipeImage: "IMGHummus",
+            recipeURL: ""
+        )
+    )
 }
 
 extension Image {

@@ -29,7 +29,7 @@ class RecipeViewModel: ObservableObject {
 - Dash ground paprika or sumac
 
 """,
-                recipeImage: "IMGhummus",
+                recipeImage: "IMGHummus",
                 recipeURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/")
         )
         
@@ -91,7 +91,7 @@ class RecipeViewModel: ObservableObject {
 - Dash ground paprika or sumac
 
 """,
-                recipeImage: "IMGhummus",
+                recipeImage: "IMGHummus",
                 recipeURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/")
         )
         
@@ -154,7 +154,7 @@ class RecipeViewModel: ObservableObject {
 - Dash ground paprika or sumac
 
 """,
-                recipeImage: "IMGhummus",
+                recipeImage: "IMGHummus",
                 recipeURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/")
         )
         

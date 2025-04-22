@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct RecipeView: View {
+    @StateObject var recipeViewModel: RecipeViewModel = RecipeViewModel()
     var body: some View {
-        VStack {
-            ListItemView(
-                name: "Test",
-                caloriesPer100grams: 100,
-                image:  "https://www.recipetineats.com/tachyon/2014/05/Hummus-2-4.jpg"
-            )
+        NavigationView {
+            List(self.recipeViewModel.recipeModels) { item in
+                NavigationLink(
+                    destination: { ShowRecipeView(recipeModel: item) },
+                    label: {
+                        ListItemView(recipeModel: item)
+                    }
+                )
+            }
+            .listStyle(.inset)
+            .navigationTitle("Recipes")
         }
-        .padding()
     }
 }
 

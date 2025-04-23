@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RecipeView: View {
-    @StateObject var recipeViewModel: RecipeViewModel = RecipeViewModel()
+    var recipeViewModel: RecipeViewModel = RecipeViewModel()
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(self.recipeViewModel.recipeModels) { item in
                 NavigationLink(
                     destination: { ShowRecipeView(recipeModel: item) },

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Observation
 
-class RecipeViewModel: ObservableObject {
-    @Published var recipeModels: [RecipeModel] = []
+@Observable class RecipeViewModel {
+    var recipeModels: [RecipeModel] = []
     
     init() {
         recipeModels.append(

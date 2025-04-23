@@ -21,8 +21,22 @@ struct ShowRecipeView: View {
                         .padding()
                     Spacer()
                     Link(destination: URL(string: recipeModel.recipeURL)!) {
-                        Image(recipeModel.recipeImage)
-                            .cornerRadius(10)
+                        ZStack {
+                            Image(recipeModel.recipeImage)
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(20)
+                                .scaleEffect(0.8)
+                            Text("Click image for recipe")
+                                .foregroundStyle(.orange)
+                                .font(.headline)
+                                .padding(.horizontal)
+                                .padding(.vertical, 5)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(.black.opacity(0.3))
+                                )
+                        }
                     }
                 }
                 .navigationTitle(recipeModel.name)
